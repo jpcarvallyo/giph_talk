@@ -1,0 +1,165 @@
+body {
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+	margin: 0;
+}
+
+section.main {
+	display: grid;
+	grid-template-columns: 20px 1fr 1fr 1fr 20px;
+	grid-template-rows: 100px auto;
+	background-color: #fff;
+}
+
+section.main nav {
+	grid-column: 1/-1;
+	display: flex;
+	justify-content: space-around;
+}
+
+svg path.search-icon{
+	fill: firebrick;
+	height: 15px;
+	width: 15px;
+}
+
+section.main .search-container {
+	display: flex;
+	grid-column: 3/4;
+	justify-content: space-around;
+	align-self: center;
+	max-height: 30px;
+}
+
+div.search-container div.search-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.search-wrapper div {
+	height: 60px;
+	width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f8f8f8;
+	border: 1px solid #d3d3d3;
+	border-radius: 0 6px 6px 0;
+	box-sizing: border-box;
+}
+
+div.search-wrapper div img {
+	height: 25px;
+}
+
+div.microphone-wrapper-top {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: firebrick;
+	align-self: center;
+	margin-left: 20px;
+}
+
+div.search-container input#search {
+	font-size: 32px;
+	height: 60px;
+	padding: 10px;
+	border-radius: 6px 0 0 6px;
+	border: 1px solid #ccc;
+}
+
+article#gif-area {
+	background-color: #f9f9f9;
+	grid-column: 1/-1;
+}
+
+
+#modal {
+	visibility: hidden;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 20px;
+	margin: auto 40px;
+	min-height: 500px;
+}
+
+#modal::before {
+	content: 'x';
+	color: black;
+	right: 60px;
+	top: 170px;
+	position: absolute;
+	font-size: 25px;
+}
+#modal div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#modal div h1 {
+	font-size: 60px;
+}
+
+marquee {
+	position: relative;
+	top: 5px;
+	margin-left: 1px;
+	width: 80px;
+	font-size: 50px;
+}
+
+
+div.logo-wrapper {
+	grid-column: 1 / 3;
+}
+
+div.logo-wrapper h1 {
+	font-family: 'Staatliches', cursive;
+	font-size: 36px;
+}
+
+.microphone-wrapper {
+	background-color: firebrick;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.microphone-wrapper path.microphone-svg {
+	fill: white;
+}
+
+body.modal-applied {
+	height: 100vh;
+	background-color: rgba(72, 72, 72, 0.865);
+}
+
+div.wrapper {
+	display: inline-block;
+	padding: 20px;
+}
+
+div.wrapper img {
+	width: 200px;
+	height: 300px;
+	border-radius: 8px;
+	transition: 1s all;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	/* position: absolute; */
+	top: 20px;
+	left: 20px;
+	box-shadow: 3px 3px 8px rgb(0 0 0 / 30%);
+}

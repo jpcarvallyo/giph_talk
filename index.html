@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gif Talk</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+	<section class="overlay"></section>
+	<section class="main">
+		<nav>
+			<div class="logo-wrapper">
+				<h1 id="logo">Gif Talk</h1>
+			</div>
+			<div class="search-container">
+				<div class="search-wrapper">
+					<input type="search" name="search" id="search">
+					<div>
+						<img id="searchBtn" src="./assets/search.svg" class="search-icon-img"/>	
+					</div>
+					
+				</div>
+				
+				<audio id="audio" src="https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-41945/zapsplat_vehicles_aircraft_call_bell_single_tone_44563.mp3"></audio>
+				<!-- <button id="searchBtn"></button> -->
+				<div class="microphone-wrapper-top">
+					<img src="./assets/microphone.svg" id="microphone"/>	
+				</div>
+			</div>
+		</nav>
+		<article id="gif-area"></article>
+	</section>
+	<section id="modal">
+		<div>
+			<h1>Listening</h1>
+			<marquee>...</marquee>
+		</div>
+		<div class="microphone-wrapper">
+			<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path class="microphone-svg" d="M12,2C13.66,2 15,3.34 15,5V11C15,12.66 13.66,14 12,14C10.34,14 9,12.66 9,11V5C9,3.34 10.34,2 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7C7,13.76 9.24,16 12,16C14.76,16 17,13.76 17,11H19Z" /></svg>
+		</div>
+	</section>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+	<script type="module" src="./js/cache.js"></script>
+	<script type="module" src="./js/voice-commands.js"></script>
+	<script type="module" src="./js/search.js"></script>
+	<script>
+		function play() {
+			var audio = document.getElementById("audio");
+			audio.play();
+		}
+		document.querySelector('img#microphone').addEventListener('click', play);
+	</script>
+	<script src="./js/get-data.js"></script>
+	<script>
+		function getLocalStream() {
+			navigator.mediaDevices.getUserMedia({video: false, audio: true}).then( stream => {
+					window.localStream = stream; // A
+					window.localAudio.srcObject = stream; // B
+					window.localAudio.autoplay = true; // C
+			}).catch( err => {
+					console.log("u got an error:" + err)
+			});
+		}
+		getLocalStream();
+	</script>
+</body>
+</html>
